@@ -4,19 +4,25 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
-    "mongoose": "^6.0.12"
+    "mongoose": "^6.0.12",
+    "serverless-http": "^2.7.0"
   },
   "scripts": {
     "start": "node server.js",
-    "startdev": "nodemon server.js"
+    "startdev": "nodemon server.js",
+    "deployheroku": "git add . && git commit -m 'deploy' && git push heroku master"
   },
   "name": "hongpeiswebsite",
   "description": "Hong Pei's website",
   "version": "1.0.0",
   "main": "server.js",
+  "engine": {
+    "node" : "16.13.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hongpeigoh/hongpeiswebsite.git"

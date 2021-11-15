@@ -1,6 +1,8 @@
 const express = require("express");
+const serverless = require('serverless-http');
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const compression = require("compression");
 const helmet = require("helmet");
 
 const app = express();
@@ -15,6 +17,7 @@ var corsOptions = {
 };
 
 app.use(helmet());
+app.use(compression());
 app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
@@ -31,3 +34,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
+
+module.exports.handler = serverless(app);
