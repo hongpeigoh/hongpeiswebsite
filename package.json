@@ -1,0 +1,42 @@
+{
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "mongoose": "^6.0.12"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "startdev": "nodemon server.js"
+  },
+  "name": "hongpeiswebsite",
+  "description": "Hong Pei's website",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hongpeigoh/hongpeiswebsite.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "rest",
+    "api",
+    "kanban",
+    "auth0",
+    "stripe",
+    "sequelize",
+    "react"
+  ],
+  "author": "hongpeigoh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hongpeigoh/hongpeiswebsite/issues"
+  },
+  "homepage": "https://github.com/hongpeigoh/hongpeiswebsite#readme"
+}
