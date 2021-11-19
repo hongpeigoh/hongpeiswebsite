@@ -1,0 +1,137 @@
+{
+  "main": {
+    "name":"Hong Pei's Website",
+    "description":"Here is my website to create new interactive elements and to showcase my resume",
+    "image":"profilepic.jpg",
+    "bio":"I am Hong Pei, a NUS Information Systems Student from the class of 2024.",
+    "contactmessage":"Contact me for any queries.",
+    "email": "hong_pei_99@hotmail.com",
+    "phone": "+65 8394 0775",
+    "github":"https://github.com/hongpeigoh/",
+    "project":"https://github.com/hongpeigoh/hongpeiswebsite",
+    "address":{
+      "street":"National University of Singapore",
+      "city":"Singapore",
+      "state":"",
+      "zip": ""
+    },
+    "website": "http://www.hongpeigoh.com",
+    "resumedownload":"http://www.hongpeigoh.com",
+    "social":[
+      {
+        "name":"facebook",
+        "url":"https://facebook.com/hongpeigoh",
+        "className":"fa fa-facebook"
+      },
+      {
+        "name":"instagram",
+        "url":"http://instagram.com/hongpeii",
+        "className":"fa fa-instagram"
+      },
+      {
+        "name":"github",
+        "url":"https://github.com/hongpeigoh",
+        "className":"fa fa-github"
+      }
+    ]
+  },
+  "resume":{
+    "skillmessage":"I am proficient in numerous languages, platforms and interfaces, including those in machine learning, data management and visualisation, as well as software engineering",
+    "education":[
+      {
+        "school":"National University of Singapore",
+        "degree":"Bachelors in Computing (Information Systems)",
+        "graduated":"August 2020 - Present",
+        "description":"Describe your experience at school, what you learned, what useful skills you have acquired etc."
+      },
+      {
+        "school":"Hwa Chong Institution",
+        "degree":"A Levels",
+        "graduated":"January 2012 - December 2017",
+        "description":"Describe your experience at school, what you learned, what useful skills you have acquired etc."
+      }
+    ],
+    "work":[
+      {
+        "company":"Awesome Design Studio",
+        "title":"Senior UX God ",
+        "years":"March 2018 - Present",
+        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+      },
+      {
+        "company":"Super Cool Studio",
+        "title":"Junior bug fixer",
+        "years":"March 2017 - February 2018",
+        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+      }
+    ],
+    "skills":[
+      {
+        "name":"Java",
+        "level":"90%"
+      },
+      {
+        "name":"Java EE",
+        "level":"85%"
+      },
+      {
+        "name":"Python",
+        "level":"80%"
+      },
+      {
+        "name":"SQL",
+        "level":"80%"
+      },
+      {
+        "name":"ReactJs",
+        "level":"70%"
+      },
+      {
+        "name":"JavaScript",
+        "level":"65%"
+      },
+      {
+        "name":"Excel",
+        "level":"65%"
+      },
+      {
+        "name":"MongoDB",
+        "level":"60%"
+      },
+      {
+        "name":"Tableau",
+        "level":"50%"
+      },
+      {
+        "name":"NodeJS",
+        "level":"50%"
+      },
+      {
+        "name":"ExpressJS",
+        "level":"50%"
+      }
+    ]
+  },
+  "portfolio":{
+    "projects": [
+      {
+        "title":"Multilingual Information Retrieval",
+        "category":"Natural Language Processing",
+        "image":"01.jpg",
+        "url":"https://github.com/hongpeigoh/mulling"
+      },
+      {
+        "title":"Fantastic Forum",
+        "category":"JavaEE React Stack Assignment for IS3106",
+        "image":"01.jpg",
+        "url":"https://github.com/hongpeigoh/fantasticforum"
+      },
+      {
+        "title":"House Sorter",
+        "category":"Variegated Sorting Algorithm for Freshmen Orientation Programme",
+        "image":"01.jpg",
+        "url":"https://github.com/hongpeigoh/HouseSorter"
+      }
+    ]
+  }
+}
