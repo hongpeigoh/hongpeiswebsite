@@ -1,5 +1,5 @@
 const express = require("express");
-const serverless = require('serverless-http');
+const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const compression = require("compression");
@@ -13,12 +13,22 @@ const kanbanRoutes = require("./controller/kanban");
 const mainRoutes = require("./controller/main");
 
 var corsOptions = {
-    origin: "http://localhost:8081",
+    origin: "*",
 };
 
-app.use(helmet());
+// app.use(
+//     helmet.contentSecurityPolicy({
+//         directives:{
+//             defaultSrc:["self"],
+//             scriptSrc:["self","code.jquery.com","maxcdn.bootstrapcdn.com","https://ajax.googleapis.com"],
+//             styleSrc:["self","maxcdn.bootstrapcdn.com"],
+//             fontSrc:["self","maxcdn.bootstrapcdn.com"]
+//         }
+//     })
+// );
 app.use(compression());
 app.use(cors(corsOptions));
+app.use(express.static(path.join(__dirname, "frontend/build")));
 
 app.use(bodyParser.json());
 
@@ -34,5 +44,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
-
-module.exports.handler = serverless(app);
