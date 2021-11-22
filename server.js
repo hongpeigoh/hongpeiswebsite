@@ -7,15 +7,6 @@ const helmet = require("helmet");
 
 const app = express();
 
-// Sequelize Modeller
-const sequelize = require("./util/database");
-
-// Import models
-const User = require('./model/user');
-const Project = require('./model/project');
-const Lane = require('./model/lane');
-const Card = require('./model/card');
-
 // API Routes
 const adminRoutes = require("./controller/admin");
 const authRoutes = require("./controller/auth");
@@ -57,13 +48,29 @@ app.use(errorRoutes);
 
 const PORT = process.env.PORT || 3001;
 
-sequelize
-  .sync()
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}.`);
-    });
-  })
-  .catch((error) => {
-    console.log(error);
+// No SQL database for production yet.
+
+if (process.env.NODE_ENV === "production") {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}.`);
   });
+} else {
+  // Sequelize Modeller
+  const sequelize = require("./util/database");
+
+  // Import models
+  const User = require("./model/user");
+  const Project = require("./model/project");
+  const Lane = require("./model/lane");
+  const Card = require("./model/card");
+  sequelize
+    .sync()
+    .then(() => {
+      app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}.`);
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
