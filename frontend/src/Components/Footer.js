@@ -5,6 +5,7 @@ class Footer extends Component {
   render() {
     if (!this.props.data) return null;
 
+    const pathname = window.location.pathname;
     const networks = this.props.data.social.map(function (network) {
       return (
         <li key={network.name}>
@@ -33,12 +34,13 @@ class Footer extends Component {
               </ul>
             </div>
           </Fade>
-
-          <div id="go-top">
-            <a className="smoothscroll" title="Back to Top" href="#home">
-              <i className="icon-up-open"></i>
-            </a>
-          </div>
+          {pathname === "/" && (
+            <div id="go-top">
+              <a className="smoothscroll" title="Back to Top" href="#home">
+                <i className="icon-up-open"></i>
+              </a>
+            </div>
+          )}
         </div>
       </footer>
     );
