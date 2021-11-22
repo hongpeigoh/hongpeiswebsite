@@ -55,7 +55,7 @@ app.use(kanbanRoutes);
 app.use(mainRoutes);
 app.use(errorRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 sequelize
   .sync()

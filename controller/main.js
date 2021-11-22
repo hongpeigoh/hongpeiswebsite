@@ -4,8 +4,8 @@ const path = require("path");
 const router = express.Router();
 
 if (process.env.NODE_ENV === "production") {
-    
-  app.use(express.static(path.join(__dirname, "frontend/build")));
+
+  router.use(express.static(path.join(__dirname, "frontend/build")));
 
   router.get("*", (req, res, next) => {
     res.sendFile(
