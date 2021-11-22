@@ -49,5 +49,8 @@
   },
   "devDependencies": {
     "chokidar": "^3.5.1"
+  },
+  "engine": {
+    "node": "16.13.0"
   }
 }
