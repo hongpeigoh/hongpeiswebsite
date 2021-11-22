@@ -64,6 +64,6 @@ sequelize
       console.log(`Server is running on port ${PORT}.`);
     });
   })
-  .catch((err) => {
+  .catch((error) => {
     console.log(error);
   });
