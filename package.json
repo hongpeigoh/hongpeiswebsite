@@ -21,7 +21,7 @@
     "dev": "concurrently \"npm run server \" \"npm run client\"",
     "deploy-heroku": "git add . && git commit -m 'deploy' && git push heroku main",
     "buildreact": "npm run build --prefix frontend",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend "
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "name": "hongpeiswebsite",
   "description": "Hong Pei's website",
