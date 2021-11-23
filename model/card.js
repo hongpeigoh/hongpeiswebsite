@@ -1,16 +1,21 @@
-const Sequelize = require("sequelize");
+const mongoose = require("mongoose");
 
-const sequelize = require("../util/database");
+const Schema = mongoose.Schema;
 
-const Card = sequelize.define("card", {
-  id: {
-    type: Sequelize.INTEGER,
-    autoIncrement: true,
-    allowNull: false,
-    primaryKey: true,
+const cardSchema = new Schema({
+  title: {
+    type: String,
+    required: true,
   },
-  title: Sequelize.STRING,
-  description: Sequelize.STRING
+  description: {
+    type: String,
+    required: true,
+  },
+  laneId: {
+    type: Schema.Types.ObjectId,
+    ref: "Lane",
+    required: true,
+  },
 });
 
-module.exports = Card;
+module.exports = mongoose.model("Card", cardSchema);

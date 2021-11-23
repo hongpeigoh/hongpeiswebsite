@@ -1,19 +1,26 @@
-const Sequelize = require("sequelize");
+const mongoose = require('mongoose');
 
-const sequelize = require("../util/database");
+const Schema = mongoose.Schema;
 
-const Card = require("./card");
-
-const Lane = sequelize.define("lane", {
-  id: {
-    type: Sequelize.INTEGER,
-    autoIncrement: true,
-    allowNull: false,
-    primaryKey: true,
+const laneSchema = new Schema({
+  title: {
+    type: String,
+    required: true
   },
-  title: Sequelize.STRING
+  projectId: {
+    type: Schema.Types.ObjectId,
+    ref: 'Project'
+  },
+  cards: [
+    {
+      cardId: { type: Schema.Types.ObjectId, ref: "Card" },
+    },
+  ],
+  projectId: {
+    type: Schema.Types.ObjectId,
+    ref: "Project",
+    required: true,
+  },
 });
 
-Lane.hasMany(Card);
-
-module.exports = Lane;
+module.exports = mongoose.model('Lane', laneSchema);

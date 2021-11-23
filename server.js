@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const compression = require("compression");
 const helmet = require("helmet");
+const mongoose = require("mongoose");
 
 const app = express();
 
@@ -48,29 +49,16 @@ app.use(errorRoutes);
 
 const PORT = process.env.PORT || 3001;
 
-// No SQL database for production yet.
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/website";
+//"mongodb+srv://service:b5Rtxbw3tpdEF6ER@cluster0.evj0q.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
-if (process.env.NODE_ENV === "production") {
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
-  });
-} else {
-  // Sequelize Modeller
-  const sequelize = require("./util/database");
-
-  // Import models
-  const User = require("./model/user");
-  const Project = require("./model/project");
-  const Lane = require("./model/lane");
-  const Card = require("./model/card");
-  sequelize
-    .sync()
-    .then(() => {
-      app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}.`);
-      });
-    })
-    .catch((error) => {
-      console.log(error);
+mongoose
+  .connect(MONGODB_URI)
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}.`);
     });
-}
+  })
+  .catch((error) => {
+    console.log(error);
+  });
