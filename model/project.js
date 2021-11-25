@@ -1,19 +1,20 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   lanes: [
     {
-      laneId: { type: Schema.Types.ObjectId, ref: "Lane" },
+      type: Schema.Types.ObjectId,
+      ref: "Lane",
     },
   ],
   userId: {
@@ -23,4 +24,4 @@ const projectSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('Project', projectSchema);
+module.exports = mongoose.model("Project", projectSchema);

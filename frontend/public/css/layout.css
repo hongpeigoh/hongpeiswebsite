@@ -1145,7 +1145,7 @@ footer .social-links li:first-child {
 /* j. Kanban
 /* ------------------------------------------------------------------ */
 
-.main, .main div {
+.main, .main > div {
   height: calc(100vh - 213px);
 }
 

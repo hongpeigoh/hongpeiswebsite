@@ -11,6 +11,10 @@ const cardSchema = new Schema({
     type: String,
     required: true,
   },
+  label: {
+    type: Number,
+    required: true,
+  },
   laneId: {
     type: Schema.Types.ObjectId,
     ref: "Lane",

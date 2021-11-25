@@ -35,6 +35,6 @@ const data = {
   ],
 };
 
-export default function ControlledBoard() {
-  return <Board data={data} draggable/>;
+export default function ControlledBoard(props) {
+  return <Board data={data} draggable editable canAddLanes {...props}/>;
 }

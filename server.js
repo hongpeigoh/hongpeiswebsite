@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const compression = require("compression");
@@ -47,10 +46,9 @@ app.use(kanbanRoutes);
 app.use(mainRoutes);
 app.use(errorRoutes);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/website";
-//"mongodb+srv://service:b5Rtxbw3tpdEF6ER@cluster0.evj0q.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const MONGODB_URI = process.env.MONGODB_URI;
 
 mongoose
   .connect(MONGODB_URI)

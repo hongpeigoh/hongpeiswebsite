@@ -11,9 +11,14 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  isAdmin: {
+    type: Boolean,
+    required: true,
+  },
   projects: [
     {
-      projectId: { type: Schema.Types.ObjectId, ref: "Project" },
+      type: Schema.Types.ObjectId,
+      ref: "Project",
     },
   ],
 });
