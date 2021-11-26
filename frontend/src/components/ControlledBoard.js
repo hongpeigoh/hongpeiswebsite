@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import Board from "react-trello";
 
 const data = {
@@ -35,6 +36,10 @@ const data = {
   ],
 };
 
-export default function ControlledBoard(props) {
+function ControlledBoard(props) {
+  const { projectId } = useParams();
+  console.log(projectId)
   return <Board data={data} draggable editable canAddLanes {...props}/>;
 }
+
+export default ControlledBoard;

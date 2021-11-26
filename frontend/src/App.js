@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     $.ajax({
-      url: "./resumeData.json",
+      url: "/resumeData.json",
       dataType: "json",
       cache: false,
       success: function (data) {
@@ -32,8 +32,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
+          <Route path="/kanban/*" element={<KanbanApp/>} />
           <Route path="/" element={<ResumeApp/>} />
-          <Route path="/kanban" element={<KanbanApp/>} />
         </Routes>
         <Footer data={resumeData.main} />
       </div>

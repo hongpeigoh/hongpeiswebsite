@@ -11,6 +11,10 @@ const projectSchema = new Schema({
     type: String,
     required: true,
   },
+  label: {
+    type: String,
+    required: true,
+  },
   lanes: [
     {
       type: Schema.Types.ObjectId,

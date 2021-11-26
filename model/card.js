@@ -15,9 +15,23 @@ const cardSchema = new Schema({
     type: Number,
     required: true,
   },
+  index: {
+    type: Number,
+    required: true,
+  },
   laneId: {
     type: Schema.Types.ObjectId,
     ref: "Lane",
+    required: true,
+  },
+  projectId: {
+    type: Schema.Types.ObjectId,
+    ref: "Project",
+    required: true,
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
     required: true,
   },
 });
